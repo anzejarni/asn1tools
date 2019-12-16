@@ -557,10 +557,10 @@ class CompiledType(compiler.CompiledType):
         else:
             string = json.dumps(dictionary, indent=indent)
 
-        return string.encode('utf-8')
+        return string
 
     def decode(self, data):
-        return self._type.decode(json.loads(data.decode('utf-8')))
+        return self._type.decode(json.loads(data))
 
     def __repr__(self):
         return repr(self._type)
